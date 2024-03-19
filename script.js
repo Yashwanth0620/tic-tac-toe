@@ -1,5 +1,8 @@
 let boxes = document.querySelectorAll(".box");
 let turnO = true;
+let popup = document.querySelector(".winner");
+let overlay = document.querySelector(".overlay");
+let ok = document.querySelector(".ok");
 
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
@@ -30,33 +33,32 @@ const checkWinner = () => {
         let val1 = boxes[pattern[0]].innerText;
         let val2 = boxes[pattern[1]].innerText;
         let val3 = boxes[pattern[2]].innerText;
-        console.log(val1, val2, val3);
 
         if(val1 === val2 && val1 === val3) {
             if(val1 == "X") {
-                alert("Player X wins");
-                disableAll();
+                document.querySelector(".text").innerText = "Player X wins";
+                popup.style.zIndex = 999;
+                overlay.style.zIndex = 998;
             } else if(val1 == "O") {
-                alert("Player O wins");
-                disableAll(0);
+                document.querySelector(".text").innerText = "Player O wins";
+                popup.style.zIndex = 999;
+                overlay.style.zIndex = 998;
             }
             break;
         }
     }
 };
-const disableAll = (n) => {
-    if(n == 0) {
-        boxes.forEach((box)=> {
-            box.disabled = true;
-        });
-    } else {
-        boxes.forEach((box) => {
-            box.disabled = false;
-            box.innerText = "";
-        })
-    }
-}
+const disableAll = () => {
+    boxes.forEach((box) => {
+        box.disabled = false;
+        box.innerText = "";
+    });
+};
 document.querySelector(".reset").addEventListener("click", () => {
-    disableAll(1);
+    disableAll();
 });
-
+ok.addEventListener("click", () => {
+    popup.style.zIndex = -999;
+    overlay.style.zIndex = -998;
+    disableAll();
+});

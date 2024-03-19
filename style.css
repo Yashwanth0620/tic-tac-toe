@@ -1,11 +1,10 @@
 * {
     margin: 0;
     padding: 0;
-}
-body {
-    background-color: #BCB8B1;
+    overflow: hidden;
 }
 main {
+    background-color: #BCB8B1;
     text-align: center;
     height: 100vh;
     padding: 25px;
@@ -37,4 +36,39 @@ main {
     font-size: large;
     background-color: #463F3A;
     color: #F4F3EE;
+}
+.winner {
+    position: absolute;
+    top: 30vh;
+    width: 50vmin;
+    left: 25vmin;
+    height: 30vmin;
+    background-color: #F4F3EE;
+    z-index: -999;
+    border: 3px solid #463F3A;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+.ok {
+    width: 50%;
+    height: 20%;
+    margin: 10%;
+    border: 1px solid #8A817C;
+    border-radius: 10px;
+}
+.text {
+    font-size: larger;
+}
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -998;
+    transition: all 0.15s ease-in-out;
 }
