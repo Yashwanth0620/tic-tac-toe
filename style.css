@@ -44,6 +44,7 @@ main {
     max-width: 400px;
     margin: auto;
     height: 30vmin;
+    min-height: 250px;
     background-color: #F4F3EE;
     z-index: -999;
     left: 50%;
@@ -52,18 +53,22 @@ main {
     border-radius: 15px;
     display: flex;
     flex-direction: column-reverse;
-    align-items: center;
     transition: all 0.2s ease-in-out;
+    align-items: center;
+    justify-content: center;
 }
 .ok {
     width: 50%;
     height: 20%;
-    margin: 10%;
+    min-height: 20px;
+    margin: 10px;
     border: 1px solid #8A817C;
     border-radius: 10px;
 }
 .text {
+    padding-top: 10%;
     font-size: larger;
+    
 }
 .overlay {
     background-color: rgba(0, 0, 0, 0.5);
